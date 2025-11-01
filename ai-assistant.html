@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forex&Trade_AI助手</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .back-button { margin-bottom: 20px; }
+        #chat-container { 
+            width: 100%; 
+            max-width: 800px; 
+            margin: auto; 
+            border: 1px solid #ccc; 
+            border-radius: 10px; 
+            padding: 20px; 
+        }
+        #chat-messages { 
+            height: 400px; 
+            overflow-y: auto; 
+            padding: 10px; 
+            border: 1px solid #eee; 
+            margin-bottom: 10px; 
+        }
+        #user-input { 
+            width: 70%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        #send-btn { 
+            padding: 10px 20px; 
+            background: #0066cc; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <div class="back-button">
+        <a href="index.html">← 返回首页</a>
+    </div>
+    
+    <div id="chat-container">
+        <h2>💬 Forex&Trade_AI助手</h2>
+        <p>请稍后...AI功能正在配置中</p>
+        <div id="chat-messages">
+            <div><strong>AI:</strong> 你好！我是Forex&Trade_AI助手，正在学习中...</div>
+        </div>
+        <input type="text" id="user-input" placeholder="请输入您的外汇问题...">
+        <button id="send-btn">发送</button>
+    </div>
+
+    <script>
+        // 这里稍后我们会添加真正的AI功能
+        document.getElementById('send-btn').addEventListener('click', function() {
+            const userInput = document.getElementById('user-input');
+            const message = userInput.value;
+            
+            if (message) {
+                const chatMessages = document.getElementById('chat-messages');
+                chatMessages.innerHTML += `<div><strong>你:</strong> ${message}</div>`;
+                chatMessages.innerHTML += `<div><strong>AI:</strong> 抱歉，AI功能正在配置中，请稍后再试。</div>`;
+                userInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
